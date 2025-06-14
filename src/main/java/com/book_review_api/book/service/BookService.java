@@ -27,7 +27,7 @@ public class BookService {
 	public Book put(BookRecord bookRecord, Long id) {
 		var book = bookRepository.findById(id).orElseThrow(() -> new RuntimeException("Book not found"));
 		book.setTitle(bookRecord.title());
-		book.setTitle(bookRecord.author());
+		book.setAuthor(bookRecord.author());
 		return bookRepository.save(book);
 	}
 	
